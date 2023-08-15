@@ -87,10 +87,12 @@ function sendRequests() {
   })
     .then((response) => {
       results[requestId] = { status: 'Success', response: response.data };
-      console.log(`sent ${requestId}`);
+      console.log(`success : ${requestId}`);
     })
     .catch((error) => {
       results[requestId] = { status: 'Failure', response: error.message };
+      console.log(`error : ${requestId}`);
+      console.log(`error : ${error}`)
     });
 }
 
